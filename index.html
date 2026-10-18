@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ClearDesk — a clean, modern business dashboard concept." />
+  <title>ClearDesk — Business Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" aria-label="ClearDesk home"><span class="brand-mark">C</span><span>clear<span class="brand-light">desk</span></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-item active" data-view="overview"><span class="nav-icon">▦</span> Overview</button>
+        <button class="nav-item" data-view="projects"><span class="nav-icon">▣</span> Projects <span class="nav-count">8</span></button>
+        <button class="nav-item" data-view="tasks"><span class="nav-icon">☷</span> Tasks <span class="nav-count">12</span></button>
+        <button class="nav-item" data-view="clients"><span class="nav-icon">♧</span> Clients</button>
+        <button class="nav-item" data-view="analytics"><span class="nav-icon">⌁</span> Analytics</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="workspace-label">PREFERENCES</div>
+        <button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span> Settings</button>
+        <div class="upgrade-card"><div class="upgrade-icon">✦</div><strong>Make room for better work.</strong><p>Keep your projects, people, and plans in one clear place.</p><button id="learnMore">Explore workspace <span>↗</span></button></div>
+        <div class="profile-mini"><div class="avatar avatar-you">JD</div><div class="profile-text"><strong>Jordan Davis</strong><span>Workspace owner</span></div><button class="more-button" aria-label="Profile options">···</button></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumbCurrent">Overview</strong></div>
+        <div class="topbar-actions"><div class="search-box"><span>⌕</span><input id="globalSearch" type="search" placeholder="Search anything..." aria-label="Search dashboard"><kbd>⌘ K</kbd></div><button class="icon-button notification-button" aria-label="Notifications">♧<i></i></button><div class="avatar avatar-you top-avatar">JD</div></div>
+      </header>
+
+      <section class="page-content" id="overviewView">
+        <div class="welcome-row"><div><div class="eyebrow"><span class="status-dot"></span> MONDAY, OCTOBER 19, 2026</div><h1>Good morning, Jordan <span class="wave">✳</span></h1><p class="subtitle">Here's what's happening across your workspace today.</p></div><div class="welcome-actions"><button class="button button-secondary" id="exportBtn">↓ Export report</button><button class="button button-primary" id="addTaskTop">＋ New task</button></div></div>
+        <div class="demo-notice"><span>ⓘ</span><span><strong>Demo workspace</strong> — sample data for portfolio preview. No real client or financial information is connected.</span></div>
+
+        <div class="section-heading"><div><h2>Workspace overview</h2><p>Your business at a glance.</p></div><button class="period-select" id="periodSelect">Last 30 days <span>⌄</span></button></div>
+        <div class="metrics-grid">
+          <article class="metric-card"><div class="metric-top"><span>Total revenue</span><span class="metric-icon green-icon">＄</span></div><div class="metric-value">$24,680<span class="metric-change positive">↗ 12.8%</span></div><div class="metric-foot">Compared to previous period</div><div class="sparkline spark-green"><svg viewBox="0 0 150 32" preserveAspectRatio="none"><path d="M0 25 C12 24 15 18 26 22 S43 13 52 17 S67 20 79 10 S96 16 106 8 S126 13 150 2"/></svg></div></article>
+          <article class="metric-card"><div class="metric-top"><span>Active projects</span><span class="metric-icon purple-icon">▣</span></div><div class="metric-value">08 <span class="metric-change positive">+2 this month</span></div><div class="metric-foot">Across 4 project categories</div><div class="mini-bars"><i style="height:45%"></i><i style="height:65%"></i><i style="height:52%"></i><i style="height:82%"></i><i style="height:58%"></i><i style="height:94%"></i><i style="height:72%"></i><i style="height:100%"></i></div></article>
+          <article class="metric-card"><div class="metric-top"><span>Tasks completed</span><span class="metric-icon blue-icon">✓</span></div><div class="metric-value">86<span class="metric-change positive">↗ 8.4%</span></div><div class="metric-foot">Out of 104 tasks this month</div><div class="progress-track"><span style="width:82.7%"></span></div><div class="progress-caption"><span>82.7% completion rate</span><span>86/104</span></div></article>
+          <article class="metric-card"><div class="metric-top"><span>Active clients</span><span class="metric-icon orange-icon">♧</span></div><div class="metric-value">14 <span class="metric-change neutral">2 new</span></div><div class="metric-foot">Client relationships this quarter</div><div class="client-stack"><span class="avatar a1">AM</span><span class="avatar a2">RL</span><span class="avatar a3">SK</span><span class="avatar a4">+11</span><span class="stack-caption">View all clients →</span></div></article>
+        </div>
+
+        <div class="content-grid">
+          <section class="panel revenue-panel"><div class="panel-heading"><div><h3>Revenue overview</h3><p>Track your income over time.</p></div><button class="dots-button" aria-label="Revenue options">···</button></div><div class="chart-legend"><span><i class="legend-dot"></i> Revenue</span><span class="chart-total">$24,680 <small>total</small></span></div><div class="chart-wrap"><div class="y-labels"><span>$8k</span><span>$6k</span><span>$4k</span><span>$2k</span><span>$0</span></div><svg class="revenue-chart" viewBox="0 0 650 220" preserveAspectRatio="none" role="img" aria-label="Illustrative revenue chart"><defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#39c98a" stop-opacity=".23"/><stop offset="100%" stop-color="#39c98a" stop-opacity="0"/></linearGradient></defs><g class="grid-lines"><line x1="0" y1="15" x2="650" y2="15"/><line x1="0" y1="60" x2="650" y2="60"/><line x1="0" y1="105" x2="650" y2="105"/><line x1="0" y1="150" x2="650" y2="150"/><line x1="0" y1="195" x2="650" y2="195"/></g><path class="chart-area" d="M0 158 C30 150 35 124 65 135 S100 110 130 126 S160 92 195 112 S235 82 260 100 S295 68 325 85 S360 102 390 70 S425 81 455 54 S490 76 520 48 S560 60 585 34 S620 43 650 18 L650 200 L0 200Z"/><path class="chart-line" d="M0 158 C30 150 35 124 65 135 S100 110 130 126 S160 92 195 112 S235 82 260 100 S295 68 325 85 S360 102 390 70 S425 81 455 54 S490 76 520 48 S560 60 585 34 S620 43 650 18"/><circle cx="455" cy="54" r="5" class="chart-point"/></svg></div><div class="x-labels"><span>Sep 21</span><span>Sep 26</span><span>Oct 01</span><span>Oct 06</span><span>Oct 11</span><span>Oct 16</span><span>Oct 19</span></div></section>
+          <section class="panel projects-panel"><div class="panel-heading"><div><h3>Project progress</h3><p>Keep an eye on your work.</p></div><button class="text-button" data-goto="projects">View all ↗</button></div><div class="project-list"><div class="project-row"><div class="project-symbol symbol-green">N</div><div class="project-info"><strong>Northstar storefront</strong><span>Design & development</span><div class="project-progress"><i style="width:78%"></i></div></div><div class="project-percent">78%</div></div><div class="project-row"><div class="project-symbol symbol-purple">C</div><div class="project-info"><strong>Client portal refresh</strong><span>Product design</span><div class="project-progress purple-progress"><i style="width:54%"></i></div></div><div class="project-percent">54%</div></div><div class="project-row"><div class="project-symbol symbol-orange">M</div><div class="project-info"><strong>Marketing website</strong><span>Web development</span><div class="project-progress orange-progress"><i style="width:91%"></i></div></div><div class="project-percent">91%</div></div><div class="project-row"><div class="project-symbol symbol-blue">A</div><div class="project-info"><strong>Analytics workspace</strong><span>Internal tools</span><div class="project-progress blue-progress"><i style="width:32%"></i></div></div><div class="project-percent">32%</div></div></div></section>
+        </div>
+
+        <div class="content-grid bottom-grid"><section class="panel tasks-panel"><div class="panel-heading"><div><h3>Tasks for today <span class="heading-count" id="taskCount">4</span></h3><p>A little progress goes a long way.</p></div><button class="text-button" data-goto="tasks">All tasks ↗</button></div><div id="todayTasks" class="task-list"><label class="task-row"><input type="checkbox"><span class="custom-check"></span><span class="task-copy"><strong>Review homepage feedback</strong><small>Northstar storefront · Today</small></span><span class="priority priority-high">High</span></label><label class="task-row"><input type="checkbox"><span class="custom-check"></span><span class="task-copy"><strong>Send project update to Alex</strong><small>Client portal refresh · Today</small></span><span class="priority priority-medium">Medium</span></label><label class="task-row"><input type="checkbox"><span class="custom-check"></span><span class="task-copy"><strong>Prepare analytics summary</strong><small>Analytics workspace · Today</small></span><span class="priority priority-low">Low</span></label><label class="task-row"><input type="checkbox"><span class="custom-check"></span><span class="task-copy"><strong>Check mobile layout spacing</strong><small>Marketing website · Today</small></span><span class="priority priority-medium">Medium</span></label></div><button class="add-task-inline" id="addTaskInline">＋ Add a task</button></section>
+          <section class="panel activity-panel"><div class="panel-heading"><div><h3>Recent activity</h3><p>The latest workspace updates.</p></div><button class="dots-button" aria-label="Activity options">···</button></div><div class="activity-list"><div class="activity-item"><div class="activity-avatar act-green">✓</div><div><p><strong>Homepage review completed</strong></p><span>Jordan Davis · Northstar storefront</span><small>18 minutes ago</small></div></div><div class="activity-item"><div class="activity-avatar act-purple">＋</div><div><p><strong>New task added</strong></p><span>Prepare analytics summary</span><small>1 hour ago</small></div></div><div class="activity-item"><div class="activity-avatar act-blue">↗</div><div><p><strong>Project status updated</strong></p><span>Marketing website · In progress</span><small>3 hours ago</small></div></div><div class="activity-item"><div class="activity-avatar act-orange">♧</div><div><p><strong>New client added</strong></p><span>Samira Khan</span><small>Yesterday</small></div></div></div></section></div>
+        <footer class="footer"><span>© 2026 ClearDesk · Portfolio concept</span><span>Designed for clearer work <b>✳</b></span></footer>
+      </section>
+      <section class="page-content alternate-view hidden" id="alternateView"><div class="welcome-row"><div><div class="eyebrow"><span class="status-dot"></span> WORKSPACE</div><h1 id="altTitle">Projects</h1><p class="subtitle" id="altSubtitle">Everything you're working on, in one place.</p></div><div class="welcome-actions"><button class="button button-primary" id="altAction">＋ Create new</button></div></div><div class="demo-notice"><span>ⓘ</span><span><strong>Demo workspace</strong> — these are fictional sample records for the ClearDesk portfolio concept.</span></div><div id="altContent" class="alt-content"></div></section>
+    </main>
+  </div>
+
+  <dialog id="taskDialog" class="task-dialog"><form method="dialog" id="taskForm"><div class="dialog-heading"><div><span class="eyebrow">WORKSPACE TASK</span><h2>Create a task</h2></div><button class="close-dialog" value="cancel" aria-label="Close">×</button></div><label class="form-label">Task name<input id="taskName" required maxlength="100" placeholder="e.g. Prepare project proposal"></label><label class="form-label">Project<select id="taskProject"><option>Northstar storefront</option><option>Client portal refresh</option><option>Marketing website</option><option>Analytics workspace</option></select></label><label class="form-label">Priority<select id="taskPriority"><option>Medium</option><option>High</option><option>Low</option></select></label><div class="dialog-actions"><button class="button button-secondary" value="cancel">Cancel</button><button class="button button-primary" id="saveTask" value="default">Add task</button></div></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/app.js"></script>
+</body>
+</html>
